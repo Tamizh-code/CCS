@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>RSA Encryption</title>
+</head>
+
+<body>
+    <center>
+        <h1>RSA Algorithm</h1>
+
+        P: <input type="number" id="p" value="53"><br><br>
+        Q: <input type="number" id="q" value="59"><br><br>
+        Message: <input type="number" id="msg" value="89"><br><br>
+
+        <button onclick="RSA()">Apply RSA</button>
+
+        <p id="result"></p>
+    </center>
+
+    <script>
+        function RSA() {
+            let p = +document.getElementById("p").value;
+            let q = +document.getElementById("q").value;
+            let m = +document.getElementById("msg").value;
+
+            let n = p * q, t = (p - 1) * (q - 1);
+            let gcd = (a, b) => b ? gcd(b, a % b) : a;
+
+            let e = 2;
+            while (gcd(e, t) != 1) e++;
+
+            let d = 1;
+            while ((d * e) % t != 1) d++;
+
+            let c = Math.pow(m, e) % n;
+            let msg = Math.pow(c, d) % n;
+
+            document.getElementById("result").innerHTML =
+                "Public Key: " + n + "<br>Exponent: " + e +
+                "<br>Private Key: " + d +
+                "<br>Cipher Text: " + c +
+                "<br>Decrypted Message: " + msg;
+        }
+    </script>
+</body>
+
+</html>
