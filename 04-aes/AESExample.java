@@ -1,7 +1,7 @@
 import javax.crypto.*;
 import java.util.Base64;
 
-public class AES {
+public class AESExample {
     public static void main(String[] args) throws Exception {
         String msg = "HELLO";
 

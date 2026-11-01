@@ -1,4 +1,4 @@
-public class playfairCipher {
+public class PlayfairCipher {
     static char[][] a = new char[5][5];
 
     static void create(String key) {
