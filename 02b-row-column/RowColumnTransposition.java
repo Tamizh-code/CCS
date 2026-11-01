@@ -38,6 +38,7 @@ class RowColumnTransposition {
                 plain.append(a[i][j]);
 
         System.out.println("Decrypted: " + plain);
+        sc.close();
     }
 }
 // import java.util.Scanner;
