@@ -14,7 +14,8 @@ public class RowColumnTransposition {
         int n = cipher.length();
         int rows = (n + columns - 1) / columns;
         int fullColumns = n % columns;
-        if (fullColumns == 0) fullColumns = columns;
+        if (fullColumns == 0)
+            fullColumns = columns;
         char[][] grid = new char[rows][columns];
         int index = 0;
         for (int c = 0; c < columns; c++) {
@@ -25,7 +26,8 @@ public class RowColumnTransposition {
         StringBuilder out = new StringBuilder();
         for (int r = 0; r < rows; r++)
             for (int c = 0; c < columns; c++)
-                if (grid[r][c] != '\0') out.append(grid[r][c]);
+                if (grid[r][c] != '\0')
+                    out.append(grid[r][c]);
         return out.toString();
     }
 
